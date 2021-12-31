@@ -2,12 +2,47 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
 export type CarouselOptions = {
+  /**
+   * Distance between slides in px.
+   * @default 25
+   */
   spaceBetween?: number
+
+  /**
+   * Duration of transition in seconds.
+   * @default 0.25
+   */
   transitionDuration?: number
+
+  /**
+   * The initial slide to display
+   * @default 0
+   */
   initialActiveIndex?: number
+
+  /**
+   *  Number of slides per view (slides visible at the same time on slider's container)
+   * @default 1
+   */
   slidesPerView?: number
+
+  /**
+   * Show navigation arrows
+   * @default true
+   */
   navigation?: boolean
+
+  /**
+   * Show pagination bullets
+   * @default false
+   */
   pagination?: boolean
+
+  /**
+   * Callback function to be called when the active slide changes
+   * @param {number} index
+   * @returns {void} void
+   */
   onChangeSlide?: (index: number) => void
 }
 
@@ -109,6 +144,13 @@ const Carousel = ({
   const slideWidth = `calc((100vw - ${slidesGap}px) / ${slidesPerView})`
 
   useEffect(() => {
+    if (initialActiveIndex) {
+      if (initialActiveIndex >= slidesCount) setActiveIndex(slidesCount - 1)
+      else setActiveIndex(initialActiveIndex)
+    }
+  }, [initialActiveIndex, slidesCount])
+
+  useEffect(() => {
     if (onChangeSlide) onChangeSlide(activeIndex)
   }, [activeIndex, onChangeSlide])
 
@@ -141,7 +183,7 @@ const Carousel = ({
           <button
             disabled={prevButtonIsDisabled}
             onClick={() => (!prevButtonIsDisabled ? updateIndex(activeIndex - 1) : null)}
-            title="Previouse"
+            title="Previous"
             type="button"
           >
             Prev

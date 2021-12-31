@@ -27,7 +27,7 @@ const Wrapper = styled.main`
 const App = () => {
   return (
     <Wrapper className="App">
-      <Carousel pagination slidesPerView={4} className="App-carousel">
+      <Carousel pagination transitionDuration={0.75} slidesPerView={4} className="App-carousel">
         {slides.map((slide) => {
           return slide.images.map((image, i) => (
             <CarouselSlide className="App-carousel-slide" key={`slide-${slide.id}-${i}`}>
