@@ -1,8 +1,10 @@
-import Carousel from './Carousel'
-import { slides } from '../mocks/slides'
-import CarouselSlide from './Carousel/Slide'
+import { useEffect, useState } from 'react'
 import styled, { ThemeProvider } from 'styled-components'
+import Carousel from './Carousel'
+import CarouselSlide from './Carousel/Slide'
 import { theme, themeColor } from '../theme'
+import { fetchSlides } from '../services/SlidesApi'
+import { SlideData } from '../services/SlidesApi/types'
 
 const Wrapper = styled.main`
   min-height: 100vh;
@@ -31,6 +33,18 @@ const Wrapper = styled.main`
 `
 
 const App = () => {
+  const [slides, setSlides] = useState<SlideData[]>([])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchSlides()
+
+      setTimeout(() => setSlides(data), 1500)
+    }
+
+    fetchData()
+  }, [])
+
   return (
     <ThemeProvider theme={theme}>
       <Wrapper className="App">

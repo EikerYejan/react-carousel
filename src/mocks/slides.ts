@@ -1,4 +1,6 @@
-export const slides = [
+import { SlideData } from '../services/SlidesApi/types'
+
+export const slides: SlideData[] = [
   {
     createdAt: '2021-12-28T20:06:09.919Z',
     title: 'Aut voluptatibus amet aliquam.',
