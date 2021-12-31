@@ -144,7 +144,7 @@ const Carousel = ({
   onChangeSlide,
 }: Props) => {
   const [activeIndex, setActiveIndex] = useState(initialActiveIndex ?? 0)
-  const slidesCount = Math.ceil(React.Children.count(children) / slidesPerView)
+  const slidesCount = Math.ceil(React.Children.count(children) / slidesPerView) ?? 0
 
   const updateIndex = (i: number) => {
     let newIndex = i
@@ -178,7 +178,11 @@ const Carousel = ({
 
   return (
     <Wrapper {...styleProps}>
-      <div style={{ transform: translateStyles }} className="carousel-inner">
+      <div
+        style={{ transform: translateStyles }}
+        className="carousel-inner"
+        data-testid="carousel-inner"
+      >
         {React.Children.map(children, (child) => {
           return React.cloneElement(child as React.ReactElement, {
             style: { minWidth: slideWidth, width: slideWidth, maxWidth: slideWidth },
@@ -187,7 +191,7 @@ const Carousel = ({
       </div>
       {pagination && (
         <div className="carousel-pagination">
-          {Array(slidesCount ?? 0)
+          {Array(slidesCount)
             .fill(0)
             .map((_, i) => (
               <button
@@ -204,6 +208,7 @@ const Carousel = ({
       {navigation && (
         <>
           <button
+            data-testid="navigation-prev"
             className="carousel-navigation prev"
             disabled={prevButtonIsDisabled}
             onClick={() => (!prevButtonIsDisabled ? updateIndex(activeIndex - 1) : null)}
@@ -213,6 +218,7 @@ const Carousel = ({
             <img src="/images/chevron-back.svg" alt="prev" />
           </button>
           <button
+            data-testid="navigation-next"
             className="carousel-navigation next"
             disabled={nextButtonIsDisabled}
             onClick={() => updateIndex(activeIndex + 1)}

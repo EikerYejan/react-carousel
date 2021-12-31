@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel Should render 1`] = `
+.c0 {
+  width: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.c0 .carousel-inner {
+  -webkit-transition: -webkit-transform 0.25s;
+  -webkit-transition: transform 0.25s;
+  transition: transform 0.25s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  gap: 25px;
+}
+
+.c0 .carousel-navigation {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 1;
+  width: 45px;
+  height: 45px;
+  top: calc(50% - 45px);
+  padding: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.c0 .carousel-navigation img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.c0 .carousel-navigation.next {
+  right: 30px;
+}
+
+.c0 .carousel-navigation.prev {
+  left: 30px;
+}
+
+.c0 .carousel-navigation:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.c0 .carousel-pagination {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 25px 0;
+  gap: 5px;
+}
+
+.c0 .carousel-pagination-bullet {
+  font-size: 0;
+  width: 14px;
+  height: 14px;
+  display: block;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  opacity: 0.2;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.c0 .carousel-pagination-bullet.is-active {
+  opacity: 1;
+}
+
+.c1 {
+  height: 100%;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+<body>
+  <div>
+    <div
+      class="c0"
+    >
+      <div
+        class="carousel-inner"
+        data-testid="carousel-inner"
+        style="transform: translate3d(calc(-0% - 0px), 0, 0);"
+      >
+        <div
+          class="c1"
+          style="min-width: calc((100vw - 0px) / 1); max-width: calc((100vw - 0px) / 1);"
+        >
+          Slide 1
+        </div>
+        <div
+          class="c1"
+          style="min-width: calc((100vw - 0px) / 1); max-width: calc((100vw - 0px) / 1);"
+        >
+          Slide 2
+        </div>
+        <div
+          class="c1"
+          style="min-width: calc((100vw - 0px) / 1); max-width: calc((100vw - 0px) / 1);"
+        >
+          Slide 3
+        </div>
+        <div
+          class="c1"
+          style="min-width: calc((100vw - 0px) / 1); max-width: calc((100vw - 0px) / 1);"
+        >
+          Slide 4
+        </div>
+        <div
+          class="c1"
+          style="min-width: calc((100vw - 0px) / 1); max-width: calc((100vw - 0px) / 1);"
+        >
+          Slide 5
+        </div>
+        <div
+          class="c1"
+          style="min-width: calc((100vw - 0px) / 1); max-width: calc((100vw - 0px) / 1);"
+        >
+          Slide 6
+        </div>
+        <div
+          class="c1"
+          style="min-width: calc((100vw - 0px) / 1); max-width: calc((100vw - 0px) / 1);"
+        >
+          Slide 7
+        </div>
+        <div
+          class="c1"
+          style="min-width: calc((100vw - 0px) / 1); max-width: calc((100vw - 0px) / 1);"
+        >
+          Slide 8
+        </div>
+        <div
+          class="c1"
+          style="min-width: calc((100vw - 0px) / 1); max-width: calc((100vw - 0px) / 1);"
+        >
+          Slide 9
+        </div>
+        <div
+          class="c1"
+          style="min-width: calc((100vw - 0px) / 1); max-width: calc((100vw - 0px) / 1);"
+        >
+          Slide 10
+        </div>
+      </div>
+      <button
+        class="carousel-navigation prev"
+        data-testid="navigation-prev"
+        disabled=""
+        title="Previous"
+        type="button"
+      >
+        <img
+          alt="prev"
+          src="/images/chevron-back.svg"
+        />
+      </button>
+      <button
+        class="carousel-navigation next"
+        data-testid="navigation-next"
+        title="Next"
+        type="button"
+      >
+        <img
+          alt="next"
+          src="/images/chevron-forward.svg"
+        />
+      </button>
+    </div>
+  </div>
+</body>
+`;
