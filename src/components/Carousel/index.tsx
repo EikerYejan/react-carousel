@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { themeColor } from '../../theme'
 
 export type CarouselOptions = {
   /**
@@ -67,18 +68,39 @@ const Wrapper = styled.div<StyleProps>`
     }
 
     &navigation {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 25px 0;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      position: absolute;
+      z-index: 1;
+      color: ${themeColor('white')};
+      width: 45px;
+      height: 45px;
+      top: calc(50% - 45px);
+      padding: 0;
+      transition: 0.5s;
 
-      button {
-        background: none;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        font-size: 18px;
-        font-weight: bold;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: invert(1);
+      }
+
+      &.next {
+        right: 30px;
+      }
+
+      &.prev {
+        left: 30px;
+      }
+
+      &:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
       }
     }
 
@@ -95,10 +117,10 @@ const Wrapper = styled.div<StyleProps>`
         height: 14px;
         display: block;
         padding: 0;
-        background-color: #333;
+        background-color: ${themeColor('primary')};
         border: none;
         border-radius: 50%;
-        opacity: 0.35;
+        opacity: 0.2;
         transition: 0.5s;
         cursor: pointer;
 
@@ -179,24 +201,26 @@ const Carousel = ({
         </div>
       )}
       {navigation && (
-        <div className="carousel-navigation">
+        <>
           <button
+            className="carousel-navigation prev"
             disabled={prevButtonIsDisabled}
             onClick={() => (!prevButtonIsDisabled ? updateIndex(activeIndex - 1) : null)}
             title="Previous"
             type="button"
           >
-            Prev
+            <img src="/images/chevron-back.svg" alt="prev" />
           </button>
           <button
+            className="carousel-navigation next"
             disabled={nextButtonIsDisabled}
             onClick={() => updateIndex(activeIndex + 1)}
             title="Next"
             type="button"
           >
-            Next
+            <img src="/images/chevron-forward.svg" alt="next" />
           </button>
-        </div>
+        </>
       )}
     </Wrapper>
   )
