@@ -9,6 +9,7 @@ export const themeColor =
 export const theme: DefaultTheme = {
   colors: {
     white: '#fff',
+    dark: '#5F6F86',
     primary: '#00bcd4',
     secondary: '#ff9800',
     accent: '#ff5722',
