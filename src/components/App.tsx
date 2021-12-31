@@ -66,7 +66,7 @@ const App = () => {
 
     return slides.map((slide) => {
       return slide.images.map((image, i) => (
-        <CarouselSlide className="App-carousel-slide" key={`slide-${slide.id}-${i}`}>
+        <CarouselSlide className="App-carousel-slide" key={`slide-${slide.id}-${image}`}>
           <img alt={`slide-${i}`} src={image} loading="lazy" />
         </CarouselSlide>
       ))

@@ -191,6 +191,7 @@ const Carousel = ({
             .fill(0)
             .map((_, i) => (
               <button
+                type="button"
                 className={`carousel-pagination-bullet ${i === activeIndex ? 'is-active' : ''}`}
                 onClick={() => updateIndex(i)}
                 key={`bullet-${i}`}
