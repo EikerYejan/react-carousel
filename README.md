@@ -1,6 +1,18 @@
-# Getting Started with Create React App
+# React Carousel
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Usage
+
+This Carousel component was inspired mainly by [Swiper](https://swiperjs.com/react) so it requires a list of child components, these can be a list [CarouselSlide](https://github.com/EikerYejan/react-carousel/blob/master/src/components/Carousel/Slide.tsx) or any other valid element.
+
+<img align="center" src="https://user-images.githubusercontent.com/47006661/147841626-8607624c-fa82-4205-ba68-b4e6d8003f00.png" />
+
+
+## Supported Props
+
+<img src="https://user-images.githubusercontent.com/47006661/147841643-8274dd98-b54b-4dab-ba32-825bf54f7899.png" />
+
 
 ## Available Scripts
 
