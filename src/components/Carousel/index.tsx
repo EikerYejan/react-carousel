@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { useSwipeable } from 'react-swipeable'
 import { themeColor } from '../../theme'
 
 export type CarouselOptions = {
@@ -114,7 +115,9 @@ const Wrapper = styled.div<StyleProps>`
       &-bullet {
         font-size: 0;
         width: 14px;
+        min-width: 14px;
         height: 14px;
+        min-height: 14px;
         display: block;
         padding: 0;
         background-color: ${themeColor('primary')};
@@ -123,6 +126,7 @@ const Wrapper = styled.div<StyleProps>`
         opacity: 0.2;
         transition: 0.5s;
         cursor: pointer;
+        flex-wrap: wrap;
 
         &.is-active {
           opacity: 1;
@@ -155,6 +159,11 @@ const Carousel = ({
     setActiveIndex(newIndex)
   }
 
+  const controls = useSwipeable({
+    onSwipedLeft: () => updateIndex(activeIndex + 1),
+    onSwipedRight: () => updateIndex(activeIndex - 1),
+  })
+
   const prevButtonIsDisabled = activeIndex <= 0
   const nextButtonIsDisabled = activeIndex >= slidesCount - 1
 
@@ -177,7 +186,7 @@ const Carousel = ({
   }, [activeIndex, onChangeSlide])
 
   return (
-    <Wrapper {...styleProps}>
+    <Wrapper {...controls} {...styleProps}>
       <div
         style={{ transform: translateStyles }}
         className="carousel-inner"
