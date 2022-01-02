@@ -114,6 +114,8 @@ const Wrapper = styled.div<StyleProps>`
       &-bullet {
         font-size: 0;
         width: 14px;
+        min-width: 14px;
+        min-height: 14px;
         height: 14px;
         display: block;
         padding: 0;
@@ -123,6 +125,7 @@ const Wrapper = styled.div<StyleProps>`
         opacity: 0.2;
         transition: 0.5s;
         cursor: pointer;
+        flex-wrap: wrap;
 
         &.is-active {
           opacity: 1;
