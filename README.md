@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+[Demo](https://react-carousel.eikeryejan.com/) (This demo is using an [mockAPI](https://mockapi.io/) endpoint to fech the images)
+
 ## Usage
 
 This Carousel component was inspired mainly by [Swiper](https://swiperjs.com/react) so it requires a list of child components, these can be a list [CarouselSlide](https://github.com/EikerYejan/react-carousel/blob/master/src/components/Carousel/Slide.tsx) or any other valid element.
